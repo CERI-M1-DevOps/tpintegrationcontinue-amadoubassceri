@@ -21,4 +21,8 @@ jobs:
           distribution: 'corretto'
 
       - name: Build and test with Maven
-        run: mvn -B package
+        run: |
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+          -Dsonar.projectKey=$(echo "${{ github.repository }}" | sed 's|/|_|g')
+        
+       
