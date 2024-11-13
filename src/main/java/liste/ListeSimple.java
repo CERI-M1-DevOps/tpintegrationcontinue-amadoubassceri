@@ -8,10 +8,20 @@ public class ListeSimple {
         return size;
     }
 
+    /**
+     * Ajoute un élément au début de la liste.
+     * @param element L'élément à ajouter dans la liste.
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
+
+    /**
+     * Modifie le premier élément trouvé dans la liste avec la valeur spécifiée.
+     * @param element L'élément à rechercher dans la liste.
+     * @param nouvelleValeur La nouvelle valeur à attribuer à l'élément trouvé.
+     */
 
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
@@ -21,6 +31,11 @@ public class ListeSimple {
             courant.setElement(nouvelleValeur);
     }
 
+    /**
+     * Modifie tous les éléments trouvés dans la liste avec la valeur spécifiée.
+     * @param element L'élément à rechercher dans la liste.
+     * @param nouvelleValeur La nouvelle valeur à attribuer à tous les éléments trouvés.
+     */
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
@@ -29,6 +44,11 @@ public class ListeSimple {
             courant = courant.getSuivant();
         }
     }
+
+    /**
+     * Retourne une représentation sous forme de chaîne de caractères de la liste.
+     * @return Une chaîne représentant tous les éléments de la liste.
+     */
 
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
@@ -42,6 +62,12 @@ public class ListeSimple {
         sb.append(")");
         return sb.toString();
     }
+
+
+    /**
+    * Supprime le premier élément correspondant à la valeur spécifiée.
+     * @param element L'élément à supprimer de la liste.
+            */
 
     public void supprimePremier(Object element) {
         if (tete != null) {
@@ -63,10 +89,21 @@ public class ListeSimple {
         }
     }
 
+    /**
+     * Supprime tous les éléments correspondant à la valeur spécifiée dans la liste.
+     * @param element L'élément à supprimer de la liste.
+     */
     public void supprimeTous(int element) {
        tete = supprimeTousRecurs(element, tete);
     }
 
+
+    /**
+     * Supprime récursivement tous les éléments correspondant à la valeur spécifiée dans la liste.
+     * @param element L'élément à supprimer de la liste.
+     * @param tete Le noeud courant de la liste.
+     * @return Le noeud suivant après suppression de l'élément.
+     */
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
         if (tete != null) {
             Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
@@ -80,6 +117,10 @@ public class ListeSimple {
         } else return null;
     }
 
+    /**
+     * Retourne l'avant-dernier élément de la liste.
+     * @return Le noeud avant-dernier ou null si la liste a moins de deux éléments.
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
@@ -94,6 +135,10 @@ public class ListeSimple {
         }
     }
 
+    /**
+     * Inverse l'ordre des éléments dans la liste.
+     */
+
     public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;
@@ -106,6 +151,12 @@ public class ListeSimple {
         tete = precedent;
     }
 
+    /**
+     * Retourne le noeud précédent du noeud spécifié dans la liste.
+     * @param r Le noeud dont on veut connaître le précédent.
+     * @return Le noeud précédent ou null si ce noeud est la tête de la liste.
+     */
+
     public Noeud getPrecedent(Noeud r) {
     // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
@@ -117,6 +168,11 @@ public class ListeSimple {
         return precedent;
     }
 
+    /**
+     * Échange les positions de deux éléments dans la liste.
+     * @param r1 Le premier noeud à échanger.
+     * @param r2 Le deuxième noeud à échanger.
+     */
     public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
             return;
