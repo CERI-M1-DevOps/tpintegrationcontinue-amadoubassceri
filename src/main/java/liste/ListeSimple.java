@@ -50,7 +50,7 @@ public class ListeSimple {
      * @return Une chaîne représentant tous les éléments de la liste.
      */
 
-    /*public String toString() {
+    public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
         while (n != null) {
@@ -61,23 +61,7 @@ public class ListeSimple {
         }
         sb.append(")");
         return sb.toString();
-    }*/
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("ListeSimple(");
-        Noeud current = tete;
-        while (current != null) {
-            sb.append(current.getElement());
-            if (current.getSuivant() != null) {
-                sb.append(", ");
-            }
-            current = current.getSuivant();
-        }
-        sb.append(")");
-        return sb.toString();
     }
-
 
 
     /**
