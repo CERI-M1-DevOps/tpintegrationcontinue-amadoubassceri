@@ -103,7 +103,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(3);
         listeATester.ajout(4);
         listeATester.supprimePremier(2);
-        assertEquals("ListeSimple(Noeud(4), Noeud(3), Noeud(1))", listeATester.toString());
+        assertEquals(listeATester.toString(), "ListeSimple(Noeud(4), Noeud(3), Noeud(1))");
         assertEquals(3, listeATester.getSize());
     }
 
@@ -114,7 +114,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(3);
         listeATester.ajout(4);
         listeATester.supprimePremier(1);
-        assertEquals("ListeSimple(Noeud(4), Noeud(3), Noeud(2))", listeATester.toString());
+        assertEquals(listeATester.toString(), "ListeSimple(Noeud(4), Noeud(3), Noeud(2))");
         assertEquals(3, listeATester.getSize());
     }
 
@@ -131,7 +131,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(2);
         listeATester.ajout(3);
         listeATester.supprimeTous(3);
-        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+        assertEquals(listeATester.toString(), "ListeSimple(Noeud(2), Noeud(1))");
         assertEquals(2, listeATester.getSize());
     }
 
@@ -141,7 +141,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(3);
         listeATester.ajout(2);
         listeATester.supprimeTous(3);
-        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+        assertEquals(listeATester.toString(), "ListeSimple(Noeud(2), Noeud(1))");
         assertEquals(2, listeATester.getSize());
     }
 
@@ -151,7 +151,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(1);
         listeATester.ajout(1);
         listeATester.supprimeTous(1);
-        assertEquals("ListeSimple(Noeud(2))", listeATester.toString());
+        assertEquals(listeATester.toString(), "ListeSimple(Noeud(2))");
         assertEquals(1, listeATester.getSize());
     }
 
@@ -162,7 +162,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(3);
         listeATester.ajout(2);
         listeATester.supprimeTous(3);
-        assertEquals("ListeSimple(Noeud(2), Noeud(1))",listeATester.toString());
+        assertEquals(listeATester.toString(), "ListeSimple(Noeud(2), Noeud(1))");
         assertEquals(2, listeATester.getSize());
     }
 
