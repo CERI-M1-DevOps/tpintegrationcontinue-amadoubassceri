@@ -43,22 +43,23 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(3, listeATester.getSize());
     }
 
-    @Test
-    void toStringDonneTousLesNoeuds() {
-        assertEquals("ListeSimple()", listeATester.toString());
+     @Test
+     void toStringDonneTousLesNoeuds() {
+         assertEquals("ListeSimple()", listeATester.toString());
 
-        listeATester.ajout(1);
-        assertEquals("ListeSimple(1)", listeATester.toString());
+         listeATester.ajout(1);
+         assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
 
-        listeATester.ajout(2);
-        assertEquals("ListeSimple(2, 1)", listeATester.toString());
+         listeATester.ajout(2);
+         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
 
-        listeATester.ajout(3);
-        assertEquals("ListeSimple(3, 2, 1)", listeATester.toString());
-    }
+         listeATester.ajout(3);
+         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());  // Correction ici
+     }
 
 
-    @Test
+
+     @Test
     void modifiePremier() {
         listeATester.ajout(1);
         listeATester.ajout(2);
